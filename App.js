@@ -5,20 +5,19 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: '',
       backgroundColor: '#fff',
     };
   }
 
-  handleButtonClick = (newMessage, newColor) => {
-    this.setState({ message: newMessage, backgroundColor: newColor });
-    Alert.alert(newMessage);
+  handleButtonClick = (newColor) => {
+    this.setState({backgroundColor: newColor });
+
   };
 
   render() {
     return (
       <View style={[styles.container, { backgroundColor: this.state.backgroundColor }]}>
-        <TitleComponent title="Hello World" color="blue" />
+        <TitleComponent title="click to change background color" color="blue" />
         <ButtonComponent
           backgroundColor="green"
           message="Green button clicked!"
@@ -49,7 +48,7 @@ class App extends Component {
         onClick={this.handleButtonClick}
         colorChange="#888888"
         />
-        {this.state.message && <Text style={styles.message}>{this.state.message}</Text>}
+
       </View>
     );
   }
@@ -87,8 +86,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
+    alignItems: "center",
+    width: '80%',
     paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 30,
     borderRadius: 5,
     marginVertical: 10,
   },

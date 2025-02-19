@@ -70,7 +70,7 @@ class ButtonComponent extends Component {
         style={[styles.button, { backgroundColor: backgroundColor }]}
         onPress={() => onClick(message, colorChange)}
       >
-        <Text style={styles.buttonText}>Click me</Text>
+        <Text style={styles.buttonText}>{backgroundColor}</Text>
       </TouchableOpacity>
     );
   }
